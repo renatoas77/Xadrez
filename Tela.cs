@@ -16,9 +16,9 @@ class Tela
                 }
                 else
                 {
-                    Console.Write(tab.peca(i, j) + " ");
+                    Console.Write(" " + tab.peca(i, j));
                 }
-                
+
             }
             Console.WriteLine();
         }
