@@ -60,7 +60,7 @@ namespace ItensXadrez
                 {
                     break;
                 }
-                pos.Linha++;
+                pos.Coluna++;
             }
 
             //esquerda
@@ -72,7 +72,7 @@ namespace ItensXadrez
                 {
                     break;
                 }
-                pos.Linha--;
+                pos.Coluna--;
             }
 
             return mat;
