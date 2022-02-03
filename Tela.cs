@@ -1,9 +1,45 @@
 ﻿using System;
+using System.Collections.Generic;
 using tabuleiro;
 using ItensXadrez;
 
 class Tela
 {
+
+    public static void ImprimirPartida(PartidaDeXadrez partida)
+    {
+        Tela.ImprimirTabuleiro(partida.Tab);
+        Console.WriteLine();
+        ImprimirPecasCapturadas(partida);
+        Console.WriteLine();
+        Console.WriteLine("Turno: " + partida.Turno);
+        Console.WriteLine("Jogador atual: " + partida.JogadorAtual);
+    }
+
+    public static void ImprimirPecasCapturadas(PartidaDeXadrez partida)
+    {
+        Console.WriteLine("Peças Capturadas:");
+        Console.Write("Brancas: ");
+        ImprimirConjunto(partida.pecasCapturadas(Cor.Branca));
+        Console.WriteLine();
+        Console.Write("Pretas:");
+        ConsoleColor aux = Console.ForegroundColor;
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        ImprimirConjunto(partida.pecasCapturadas(Cor.Branca));
+        Console.ForegroundColor = aux;
+        Console.WriteLine();
+
+    } 
+
+    public static void ImprimirConjunto(HashSet<Peca> conjunto)
+    {
+        Console.Write("[");
+        foreach (Peca x in conjunto)
+        {
+            Console.Write(x + " ");
+        }
+        Console.WriteLine("]");
+    }
 
     public static void ImprimirTabuleiro(Tabuleiro tab)
     {
