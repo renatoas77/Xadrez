@@ -14,6 +14,10 @@ class Tela
         Console.WriteLine();
         Console.WriteLine("Turno: " + partida.Turno);
         Console.WriteLine("Jogador atual: " + partida.JogadorAtual);
+        if (partida.Xeque)
+        {
+            Console.WriteLine("XEQUE!");
+        }
     }
 
     public static void ImprimirPecasCapturadas(PartidaDeXadrez partida)
@@ -25,7 +29,7 @@ class Tela
         Console.Write("Pretas:");
         ConsoleColor aux = Console.ForegroundColor;
         Console.ForegroundColor = ConsoleColor.Yellow;
-        ImprimirConjunto(partida.pecasCapturadas(Cor.Branca));
+        ImprimirConjunto(partida.pecasCapturadas(Cor.Preta));
         Console.ForegroundColor = aux;
         Console.WriteLine();
 
